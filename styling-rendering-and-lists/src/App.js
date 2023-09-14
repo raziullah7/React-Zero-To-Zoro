@@ -1,5 +1,6 @@
 import './App.css';
 import { User } from './User.js'
+import { Planet } from './Planet';
 
 function App() {
   const age = 19;
@@ -10,6 +11,15 @@ function App() {
     { name: "Ali", age: 20},
     { name: "Raza", age: 40},
     { name: "Tiwana", age: 69},
+  ];
+
+  const planets = [
+    {name: "Mars", isGasPlanet: false},
+    {name: "Earth", isGasPlanet: false},
+    {name: "Jupiter", isGasPlanet: true},
+    {name: "Venus", isGasPlanet: false},
+    {name: "Neptune", isGasPlanet: true},
+    {name: "Uranus", isGasPlanet: true},
   ];
 
   return (
@@ -48,12 +58,22 @@ function App() {
         );
         
       })}
+      
+      <h1>----------------------------------------------------------------------</h1>
+      {planets.map((planet, key) => {
+        return (
+          planet.isGasPlanet ? <Planet pname={planet.name} /> : <></>
+        );
+      })}
 
+      <h1>----------------------------------------------------------------------</h1>
+      {planets.map((planet, key) => 
+          planet.isGasPlanet && <Planet pname={planet.name} />
+      )}
     </div>
   );
 }
 
 // using a component "User" but refactored it in a separate file
-
 
 export default App;
