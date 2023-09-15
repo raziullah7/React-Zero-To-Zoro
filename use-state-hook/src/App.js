@@ -37,6 +37,21 @@ function App() {
     setTextVisibility(textVisibility ? false : true);
   }
 
+  // for episode 4 practice session
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1)
+  }
+
+  const decrease = () => {
+    setCount(count - 1)
+  }
+
+  const setToZero = () => {
+    setCount(0)
+  }
+
   return (
     <div className="App" style={ {fontSize: 24} }>
       {age}
@@ -56,6 +71,15 @@ function App() {
       <button style={ {fontSize: 32} } onClick={toggleBoolean} > Show/Hide Text </button>
       {textVisibility && <h2>HI, WELCOME TO THE "ZERO TO ZORO" REACT COURSE</h2>}
       {inputVal}
+
+      <h1>----------------------------------------------------------------------</h1>
+
+      {/** made a counter app for episode practice session */}
+      <button style={ {fontSize: 24} } onClick={increase}> Increase </button>
+      <button style={ {fontSize: 24} } onClick={decrease}> Decrease </button>
+      <button style={ {fontSize: 24} } onClick={setToZero}> Set to Zero</button>
+      <br />
+      <h3 style={{display: 'inline-block', marginRight: 12}}>Counter:</h3> {count}
     </div>
   );
 }
