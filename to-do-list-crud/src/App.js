@@ -26,6 +26,7 @@ function App() {
     const task = {
       id: todoList.length === 0? 1 : todoList[todoList.length - 1].id + 1,
       taskName: newTask,
+      completion: false,
     }
     setTodoList([...todoList, task]);
   };
@@ -57,6 +58,18 @@ function App() {
     setTodoList(todoList.filter((task) => task.id !== taskId));
   };
 
+  const completeTask = (id) => {
+    setTodoList(
+      todoList.map((task) => {
+        if (task.id === id) {
+          return {...task, completion: true}
+        } else {
+          return task;
+        }
+      })
+    );
+  };
+
   return (
     <div className="App">
       <div className='addTask' style={{ backgroundColor: "dodgerblue", paddingTop: 128, paddingBottom: 128, margin: 0 }}>
@@ -67,7 +80,7 @@ function App() {
       <div className='list'>
         {todoList.map((task) => {
           /** also passing the deleteTask function as props */
-          return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask} />;
+          return <Task task={task} deleteTask={deleteTask} completeTask={completeTask} />;
         })}
       </div>
     </div>
