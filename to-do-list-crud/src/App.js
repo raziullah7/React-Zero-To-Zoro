@@ -58,6 +58,7 @@ function App() {
     setTodoList(todoList.filter((task) => task.id !== taskId));
   };
 
+  // updation part of CRUD
   const completeTask = (id) => {
     setTodoList(
       todoList.map((task) => {

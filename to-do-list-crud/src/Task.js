@@ -4,7 +4,7 @@ export const Task = (props) => {
 
         <button style={ {fontSize: 24, marginLeft: 16} } onClick={() => props.completeTask(props.task.id)}> Completed </button>
         
-        {/* <button style={ {fontSize: 24, marginLeft: 16} } onClick={() => props.completeTask()}>
+        {/** <button style={ {fontSize: 24, marginLeft: 16} } onClick={() => props.completeTask()}>
             Completed </button> */}
             
         <button style={ {fontSize: 24, marginLeft: 16} } onClick={() => props.deleteTask(props.task.id)}>
