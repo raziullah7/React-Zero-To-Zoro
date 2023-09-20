@@ -30,6 +30,19 @@ function App() {
     .then((res) => setPredictedAge(res.data));
   }
 
+//---------------------------------------------------------------------------------
+
+// api address does not work, so it gives an error
+// the remaining code is fine and works as expected
+  const [excuse, setExcuse] = useState("");
+
+  const getExcuse = (type) => {
+    Axios.get(`https://excuser.herokuapp.com/v1/excuse/${type}/`)
+    .then((res) => setExcuse(res.data[0].excuse));
+  }
+
+
+
   return (
     <div className="App">
       <button onClick={fetchCatFact} style={{fontSize: 24}}>
@@ -48,6 +61,22 @@ function App() {
 
       <h1>Predicted Age: {predictedAge?.age}</h1>
       <h1>Name Count: {predictedAge?.count}</h1>
+
+      <h1>---------------------------------------------------------------------</h1>
+
+      <button 
+        onClick={getExcuse("party")} 
+        style={{marginBottom: 12, fontSize: 24}}> Party</button>
+      <br></br>
+      <button 
+        onClick={getExcuse("family")} 
+        style={{marginBottom: 12, fontSize: 24}}> Family</button>
+      <br></br>
+      <button 
+        onClick={getExcuse("office")} 
+        style={{marginBottom: 12, fontSize: 24}}> Office</button>
+      <br></br>
+      <h1> {excuse}</h1>
     </div>
   );
 }
