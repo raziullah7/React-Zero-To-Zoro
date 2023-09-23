@@ -64,7 +64,7 @@ function App() {
 
       <h1>---------------------------------------------------------------------</h1>
 
-      <button 
+      {/* <button 
         onClick={getExcuse("party")} 
         style={{marginBottom: 12, fontSize: 24}}> Party</button>
       <br></br>
@@ -76,7 +76,7 @@ function App() {
         onClick={getExcuse("office")} 
         style={{marginBottom: 12, fontSize: 24}}> Office</button>
       <br></br>
-      <h1> {excuse}</h1>
+      <h1> {excuse}</h1> */}
     </div>
   );
 }
