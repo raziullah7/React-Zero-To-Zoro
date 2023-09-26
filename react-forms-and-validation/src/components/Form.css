@@ -1,0 +1,26 @@
+input {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    width: 300px;
+    margin-top: 12px;
+}
+
+.submitButton {
+    width: 200px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: red;
+}
