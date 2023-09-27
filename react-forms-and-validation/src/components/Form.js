@@ -21,7 +21,7 @@ export const Form = () => {
         // password must be a string with (characters >= 4 && characters <= 20)
         password: yup.string().min(4).max(20)
         .required(),
-        
+
         // oneOf() takes an array that tells it to be the same as one of
         // the elements in the array. Use yup.ref() to refer it to a
         // field of the same object (password field in this case)
@@ -31,9 +31,9 @@ export const Form = () => {
 
     });
 
-// submitHandler takes a function as argument and applies to a form
-// register takes an identifier which is then saved as a field for an object
-// used resolver to map the objects to the defined schema
+    // submitHandler takes a function as argument and applies to a form
+    // register takes an identifier which is then saved as a field for an object
+    // used resolver to map the objects to the defined schema
     const { register, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(schema),
     });
