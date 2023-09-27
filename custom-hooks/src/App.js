@@ -1,5 +1,6 @@
 import './App.css';
 import { Cat } from './components/Cat';
+import { Counter } from './components/Counter';
 import { useToggle } from './useToggle';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -22,10 +23,13 @@ function App() {
           { isVisible? "Hide" : "Show" }</button>
           { isVisible && <h1>Hidden Text</h1> }
 
-        <h1>----------------------------------------------------------------------------------</h1>
+        <h1>------------------------------------------------------------------------------</h1>
 
         <Cat />
 
+        <h1>------------------------------------------------------------------------------</h1>
+
+        <Counter />
       </div>
     </QueryClientProvider>
   );
